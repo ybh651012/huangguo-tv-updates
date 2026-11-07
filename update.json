@@ -1,8 +1,8 @@
 {
   "packageName": "tw.tvsite.viewer.huangguostabletv",
-  "versionCode": 19,
-  "versionName": "3.4.0",
-  "apkUrl": "https://ybh651012.github.io/huangguo-tv-updates/releases/HuangguoTV_v3.4.0.apk",
-  "sha256": "2165eac175decfddca261965300d55f87617655cd3a4ed152586eae887884303",
-  "notes": "新增主選單「系統更新」、開機／啟動背景檢查、最新版本提示、APK SHA-256 與簽章驗證，以及遙控器啟動的系統更新安裝流程。"
+  "versionCode": 20,
+  "versionName": "3.4.1",
+  "apkUrl": "https://ybh651012.github.io/huangguo-tv-updates/releases/HuangguoTV_v3.4.1.apk",
+  "sha256": "61e58f05e01248c9863a748e8767c2da6ffbf7f0799ae7329cf5892ede4ef757",
+  "notes": "效能更新：改善首頁及各影片清單的海報補載，優先處理第一頁尚未顯示的封面；縮減隱藏原站圖片解碼框架，並分批處理圖片，降低對 Google TV 遙控器操作的干擾。減少方向鍵移動時重複呼叫 WebView、重繪 RecyclerView 卡片與不必要的 DOM 掃描。維持黃果 TV 正式簽章、獨立應用資料及原有系統更新機制。實際載入速度仍受原站圖片來源、網路與裝置效能影響。"
 }
