@@ -1,0 +1,8 @@
+{
+  "packageName": "tw.tvsite.viewer.huangguostabletv",
+  "versionCode": 19,
+  "versionName": "3.4.0",
+  "apkUrl": "https://ybh651012.github.io/huangguo-tv-updates/releases/HuangguoTV_v3.4.0.apk",
+  "sha256": "2165eac175decfddca261965300d55f87617655cd3a4ed152586eae887884303",
+  "notes": "新增主選單「系統更新」、開機／啟動背景檢查、最新版本提示、APK SHA-256 與簽章驗證，以及遙控器啟動的系統更新安裝流程。"
+}
