@@ -1,8 +1,8 @@
 {
   "packageName": "tw.tvsite.viewer.huangguostabletv",
-  "versionCode": 20,
-  "versionName": "3.4.1",
-  "apkUrl": "https://ybh651012.github.io/huangguo-tv-updates/releases/HuangguoTV_v3.4.1.apk",
-  "sha256": "61e58f05e01248c9863a748e8767c2da6ffbf7f0799ae7329cf5892ede4ef757",
-  "notes": "效能更新：改善首頁及各影片清單的海報補載，優先處理第一頁尚未顯示的封面；縮減隱藏原站圖片解碼框架，並分批處理圖片，降低對 Google TV 遙控器操作的干擾。減少方向鍵移動時重複呼叫 WebView、重繪 RecyclerView 卡片與不必要的 DOM 掃描。維持黃果 TV 正式簽章、獨立應用資料及原有系統更新機制。實際載入速度仍受原站圖片來源、網路與裝置效能影響。"
+  "versionCode": 21,
+  "versionName": "3.4.2",
+  "apkUrl": "https://ybh651012.github.io/huangguo-tv-updates/releases/HuangguoTV_v3.4.2.apk",
+  "sha256": "78deb9ecabefc9dff8f6b62a595d264d6193f275848d6661ed4aa5505e532265",
+  "notes": "黃果 TV v3.4.2｜遙控器與海報效能調整\n\n- 維持每列 4 部影片，畫面一次僅呈現 1 列；上下方向鍵逐列切換，左右方向鍵在列內移動。\n- 將 Android 原生 RecyclerView 的可見工作視窗從 8 張縮小為 4 張，減少同時解碼、網路下載及卡片重新綁定。\n- 網頁端初始積極載入海報的數量從 8 張降為 4 張；缺失縮圖的救援處理亦改為每次只處理同一列 4 張。\n- 在「專題」內頁，於左側邊界按左鍵或返回時，優先回到上一層專題索引及原先選取卡片，不直接跳到側邊主選單「專題」。\n- 保持黃果 TV 原本的獨立套件、資料、播放核心、正式簽章及 HTTPS 系統更新。\n\n注意：海報速度仍會受到網站縮圖來源、來源端限流、Google TV 記憶體和網路狀態影響。上述變更降低同時工作量，非保證所有網站封面都能立即出現。"
 }
