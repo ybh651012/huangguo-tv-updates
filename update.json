@@ -1,8 +1,8 @@
 {
   "packageName": "tw.tvsite.viewer.huangguostabletv",
-  "versionCode": 37,
-  "versionName": "3.4.18",
-  "apkUrl": "https://ybh651012.github.io/huangguo-tv-updates/releases/HuangguoTV_v3.4.18.apk",
-  "sha256": "494c79ba2e8add83c6d8733a80b16d3ed01488e822d7c0e7becf098e06e41598",
-  "notes": "黃果漫劇 v3.4.18｜播放器遙控器三段焦點修復\n\n修復重點：v3.4.17 只把選集與全螢幕當成兩個焦點位置，沒有進度條／時間；若網站播放控制是不可聚焦的 HTML 元素，JS 會回傳已聚焦但焦點沒有視覺回饋。同時 WebChrome 真正全螢幕時 WebView 被隱藏，所有繪在 WebView 的焦點框也會消失。\n\n1. 影片頁面按 DOWN 進入原有下方控制列，明確形成「選集→進度條／時間→全螢幕」三段焦點。LEFT/RIGHT 換選取項；OK 選集會開啟實際網站集數連結的劇集清單。OK 進度條進入拖曳模式，LEFT/RIGHT 每次快退或快轉 10 秒，再按 OK 結束拖曳。OK 全螢幕執行網站可用的原生全螢幕；若來源不支援則回退至先前電影模式。方向上鍵關閉焦點回到影片。\n2. 保留網站的原始進度條／播放器，不新增第二套播放工具列。網站原控制不可聚焦時僅顯示無點擊事件的金色焦點外框與控制提示，以實際網站播放條位置／影像可視區計算位置，避免「按鍵成功卻看不到焦點」。\n3. WebChrome 獨立全螢幕視圖：Android 直接繪製焦點外框（因 WebView 已被隱藏），且由 Android 路由 3 區操作。選集先由網站原有 episodeLinks 開啟面板再退全螢幕顯示；進度區的方向鍵控制真實媒體 10 秒跳轉；全螢幕按鈕可離開全螢幕。\n4. BACK 分層：優先結束正在選取的播放控制，再離開全螢幕，再回到先前影片列表。非全螢幕狀態也優先解除播放控制焦點，不再直接跳離正在播放的影片。\n5. 播放器控制區在遙控器已有焦點時不受 3 秒自動收合計時器隱藏；解除焦點後恢復 3 秒的既有自動收合行為。\n6. 版本 3.4.18 / versionCode 37，保持原 applicationId tw.tvsite.viewer.huangguostabletv、正式覆蓋安裝身分與黑金 TV 獨立性。\n\n自動化回歸測試涵蓋三段焦點導覽、進度條拖曳模式、網站按鈕缺失時的可見焦點框、全螢幕 Android 焦點路由與 BACK 行為。沒有實際 Google TV Streamer 4K 連線，仍需實機驗收 HDMI 與來源站播放器各種狀態；來源影音串流伺服器失效、授權或加密格式問題，不在焦點修復的能力內。"
+  "versionCode": 38,
+  "versionName": "3.4.19",
+  "apkUrl": "https://ybh651012.github.io/huangguo-tv-updates/releases/HuangguoTV_v3.4.19.apk",
+  "sha256": "b82c3eb8cae9c09dda191d42c72651d1b9fb168548e25576d0046de15931a797",
+  "notes": "黃果漫劇 v3.4.19｜修復 v3.4.18 遙控器失準、焦點框過大與位置錯誤\n\n1. 放棄以來源網站 DOM 容器大小或百分比座標繪製金色焦點框；v3.4.18 誤選了完整播放器容器，導致出現照片中的空白大框與錯誤選取位置。\n2. 由 Android 原生層提供單一、固定三區的 TV 控制列（紫色外框、目前按鈕藍色發光焦點），從左至右：選集 → 播放進度／時間 → 全螢幕。保持橫向全螢幕比例且不以滑鼠游標移動。\n3. DOWN 從播放畫面進入選集；左右選取其他區；OK 選集開啟真實來源集數面板。OK 進度進入／結束拖曳模式，左右每次快退／快轉 10 秒；OK 全螢幕操作原網站播放表面／可用標準全螢幕。\n4. 同一組 Android D-pad 路由處理內嵌 WebView、原網站模式、WebChrome 真全螢幕，消除 JS 與 Java 各自記錄不同焦點、DOWN 被網站吞掉的問題。\n5. UP 退出進度調整／回播放畫面；BACK 依序解除焦點、退出全螢幕、返回影片清單，集數面板可用遙控器選擇與返回。\n6. 只顯示一條清晰的 TV 操作列，背後維持網站既有媒體來源，不更動播放網址或獨立安裝身分。顯示時間及真正的進度百分比，不用假進度。\n7. 版本 3.4.19 / versionCode 38；維持 applicationId tw.tvsite.viewer.huangguostabletv、既有正式簽章及與黑金 TV 獨立。\n\n自動測試可檢查來源碼與操作狀態、原生 Android 可編譯性；仍需要 Google TV Streamer 4K 上的實機影片、遙控器及 HDMI 驗收。若來源站更改影片頁結構，可能仍需相容性修正。"
 }
