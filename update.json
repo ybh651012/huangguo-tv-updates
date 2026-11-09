@@ -1,8 +1,8 @@
 {
   "packageName": "tw.tvsite.viewer.huangguostabletv",
-  "versionCode": 33,
-  "versionName": "3.4.14",
-  "apkUrl": "https://ybh651012.github.io/huangguo-tv-updates/releases/HuangguoTV_v3.4.14.apk",
-  "sha256": "7ff68c96e4a95ea571cb2d113eb8435a16ca7a6d58fd0fbe3e74c0b92f908fe5",
-  "notes": "黃果 TV v3.4.14｜播放器遙控器整體修復、歷史海報、更新頁比例與選單清理\n\n關鍵失效原因：v3.4.13 移除了 sitePlayerControls() 定義，卻在 openControls() 仍然呼叫，影片存在時發生 JavaScript ReferenceError，使後續 mode='detail' 和遙控區焦點初始化沒有執行。另有播放區原始 z-index 可能高於新增 TV 控制列、MainActivity 左右鍵優先走 remoteSeekInput() 直接快轉而非切換按鈕的路徑錯誤。\n\n修正：\n1. 刪除失效函式呼叫，播放器 openControls 可以完整進入 detail mode；保留 HTML5 系統控制器作為安全備援。\n2. 控制列 z-index 提升到網站播放圖層之上。顯示控制列時，左右鍵優先移動控制列焦點，OK 執行選擇的播放／暫停、前後 10 秒、選集、收起。隱藏時方向鍵先喚醒控制列。保留 WebChrome 原生全螢幕與 Media3 既有路徑。\n3. 歷史海報：進入影片前保存原列表影片縮圖；原本沒有縮圖的歷史紀錄嘗試同站頁面的 og:image、twitter:image 或封面 img 補圖並緩存。同站封面暫時沒有提供或無法載入時顯示有標題的 WebP 替代封面，避免原生 TV 海報整排灰色空白。原生瀏覽列表可接收補圖更新；不嘗試下載受保護影片內容。\n4. 系統更新：縮小版本文字與按鈕間距，使更新內容說明區占更新卡片約一半並可上下捲動。\n5. 左側選單：移除「非官方個人瀏覽器 · OK 切換分類」可見提示，分類隨之上移。此修改不改變應用本身的來源定位。\n6. 延續單劇一筆歷史紀錄、最後觀看集數與時間、下一集預載、個人化海報快取，及與黑金 TV 完全不同的 applicationId 和資料儲存。\n\n版本 versionName 3.4.14、versionCode 33。回歸測試直接執行曾經中斷的 openControls()，確保不再有 ReferenceError；測試遙控器左右鍵轉為移動焦點，且不誤快轉；測試歷史海報按劇集共享快取和更新畫面布局。\n\n限制：沒有實際 Google TV Streamer 4K 連線，無法宣稱所有網站播放器／跨來源 iframe 的遙控器相容性已經實機通過。若來源不公開可用的海報 URL，使用替代封面，不保證還原真正海報。"
+  "versionCode": 34,
+  "versionName": "3.4.15",
+  "apkUrl": "https://ybh651012.github.io/huangguo-tv-updates/releases/HuangguoTV_v3.4.15.apk",
+  "sha256": "62116bc50f96d31ec4296a3fb125d10b0f134a2d10640ba000e0e4d13cd4fd93",
+  "notes": "黃果漫劇 v3.4.15｜使用者驗收修正版\n\n1. 刪除 v3.4.13/v3.4.14 額外的黃果 TV 播放操作列，包括黑金色五鍵遙控面板與 Android WebChrome 全螢幕重複播放列。保留網站原有影片進度條、選集與全螢幕按鈕。Android 遙控器直接對正在播放的 HTML5 影片執行 OK 暫停/續播、左右快退/快轉；DOWN/UP 交由來源播放器或喚醒其內建控制。Media3 單獨播放仍保留其原生控制器。\n2. 歷史紀錄真實海報：將影片列表可用的真實海報依劇名對應的 /video/<id>/ 保存；舊紀錄嘗試從系列首頁、最後觀看集數頁及公開首頁/排行榜回查真實封面。修復 Android PosterCache 過去以相同影片網址固定快取替代封面的問題：現在只有專題使用穩定網址鍵，影片海報依實際圖片內容區分，讓新圖片可取代舊的紫色備援海報。\n3. 下一集：提早預載可存取的下一集網頁 HTML，且僅對站點公開明確標示的相容 MP4/WebM 同來源資源加入瀏覽器預取提示；本集結束先點擊網站原有「下一集」連結，讓站內客戶端路由有機會在同一播放器接續播放；不再由應用自己強制重載下一頁。自動接續期間抑制多餘的來源中央巨大播放圖案；來源播放器能重用時盡量減少中斷。\n4. 主選單（首頁）在原生海報瀏覽模式向下對齊右方影片第一列，保留左側其他導覽項目及焦點。\n5. App 名稱由「黃果 TV」調整為「黃果漫劇」，包括 Android TV 桌面名稱、選單標題及相關可見文字。applicationId 仍為 tw.tvsite.viewer.huangguostabletv，沿用原簽章、收藏和歷史資料，且與既有黑金 TV 相互獨立。\n版本 3.4.15 / versionCode 34。\n\n已設置回歸測試：無重複控制列、Android/HTML5 原始播放控制、站內下一集連結與公開預載、歷史真實封面取代 placeholder 快取、首頁對齊與新顯示名稱。\n\n限制：站點未提供可共用的影片解碼器或連續播放 API 時，跨頁播放器仍需要載入，無法保證真正零黑屏、零等待或跨來源影片緩衝。若舊影片來源不再提供有效海報，仍會顯示可辨識的備援圖，不能捏造真實封面。需以 Google TV Streamer 4K 實機驗收。"
 }
