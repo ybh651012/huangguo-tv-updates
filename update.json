@@ -1,8 +1,8 @@
 {
   "packageName": "tw.tvsite.viewer.huangguostabletv",
-  "versionCode": 32,
-  "versionName": "3.4.13",
-  "apkUrl": "https://ybh651012.github.io/huangguo-tv-updates/releases/HuangguoTV_v3.4.13.apk",
-  "sha256": "07e891b34a1213680847588bb44c78b6ed9bb3980e074f2710312b546db426c0",
-  "notes": "黃果 TV v3.4.13｜遙控器實際操作、歷史紀錄整併、播放時間與更新返回首頁\n\n1. 網頁播放器控制區：建立真正的 Android TV 遙控器可選取按鈕，按下方向鍵 DOWN 進入播放控制區，LEFT/RIGHT 在退 10 秒／暫停播放／進 10 秒／選集／收起間切換，OK 執行聚焦動作。不再誤觸網站封面或不能聚焦的滑鼠按鈕。影片播放並且三秒無操作後隱藏，暫停保留按鈕。\n2. Android WebChrome 全螢幕：另外提供原生、實際可聚焦的控制條及時間，攔截 DOWN 進入控制區，LEFT/RIGHT 選取，OK 執行，上鍵收起。各項指令仍送往現有已開啟的合法 HTML5 播放元件，不重新導覽。\n3. 歷史紀錄：依 /video/<影片 ID>/ 將同一短劇不同集的舊資料自動整合為一個卡片，只保留最近一次播放的集數網址與秒數；下次播放再次覆蓋同系列的舊紀錄，不影響其他短劇。\n4. 播放時間：將獨立時間提示移到進度條較上方（bottom 17vh），在新遙控器控制條內同步即時顯示「目前時間／總長」及進度；來源無可靠時間資料時顯示 --:-- 而不虛構。\n5. 更新體驗：系統安裝畫面為 Android PackageInstaller 所有，普通 APK 無權自動關閉；改為記錄更新目標版本，更新成功、使用者離開系統安裝畫面並返回黃果 TV 後直接載入首頁，不停留在舊更新頁。\n6. 延續原有 HD 海報快取、下一集預載、收藏、影片續播及黃果／黑金獨立 packageName。\n\n版本 3.4.13、versionCode 32。測試程式另涵蓋歷史資料由多集自動合併、操作焦點、遙控器向下進入、選取 OK 執行，以及更新後返回首頁檢查。\n\n限制：若網站使用外部 iframe／不允許 seek，部分原生影片功能仍可能受網站來源限制，須以 Google TV Streamer 4K 實機驗證。官方 Android 系統安裝完成畫面上的「完成」需由使用者操作。"
+  "versionCode": 33,
+  "versionName": "3.4.14",
+  "apkUrl": "https://ybh651012.github.io/huangguo-tv-updates/releases/HuangguoTV_v3.4.14.apk",
+  "sha256": "7ff68c96e4a95ea571cb2d113eb8435a16ca7a6d58fd0fbe3e74c0b92f908fe5",
+  "notes": "黃果 TV v3.4.14｜播放器遙控器整體修復、歷史海報、更新頁比例與選單清理\n\n關鍵失效原因：v3.4.13 移除了 sitePlayerControls() 定義，卻在 openControls() 仍然呼叫，影片存在時發生 JavaScript ReferenceError，使後續 mode='detail' 和遙控區焦點初始化沒有執行。另有播放區原始 z-index 可能高於新增 TV 控制列、MainActivity 左右鍵優先走 remoteSeekInput() 直接快轉而非切換按鈕的路徑錯誤。\n\n修正：\n1. 刪除失效函式呼叫，播放器 openControls 可以完整進入 detail mode；保留 HTML5 系統控制器作為安全備援。\n2. 控制列 z-index 提升到網站播放圖層之上。顯示控制列時，左右鍵優先移動控制列焦點，OK 執行選擇的播放／暫停、前後 10 秒、選集、收起。隱藏時方向鍵先喚醒控制列。保留 WebChrome 原生全螢幕與 Media3 既有路徑。\n3. 歷史海報：進入影片前保存原列表影片縮圖；原本沒有縮圖的歷史紀錄嘗試同站頁面的 og:image、twitter:image 或封面 img 補圖並緩存。同站封面暫時沒有提供或無法載入時顯示有標題的 WebP 替代封面，避免原生 TV 海報整排灰色空白。原生瀏覽列表可接收補圖更新；不嘗試下載受保護影片內容。\n4. 系統更新：縮小版本文字與按鈕間距，使更新內容說明區占更新卡片約一半並可上下捲動。\n5. 左側選單：移除「非官方個人瀏覽器 · OK 切換分類」可見提示，分類隨之上移。此修改不改變應用本身的來源定位。\n6. 延續單劇一筆歷史紀錄、最後觀看集數與時間、下一集預載、個人化海報快取，及與黑金 TV 完全不同的 applicationId 和資料儲存。\n\n版本 versionName 3.4.14、versionCode 33。回歸測試直接執行曾經中斷的 openControls()，確保不再有 ReferenceError；測試遙控器左右鍵轉為移動焦點，且不誤快轉；測試歷史海報按劇集共享快取和更新畫面布局。\n\n限制：沒有實際 Google TV Streamer 4K 連線，無法宣稱所有網站播放器／跨來源 iframe 的遙控器相容性已經實機通過。若來源不公開可用的海報 URL，使用替代封面，不保證還原真正海報。"
 }
