@@ -1,8 +1,8 @@
 {
   "packageName": "tw.tvsite.viewer.huangguostabletv",
-  "versionCode": 44,
-  "versionName": "3.4.25",
-  "apkUrl": "https://ybh651012.github.io/huangguo-tv-updates/releases/HuangguoTV_v3.4.25.apk",
-  "sha256": "2fae25c501beb375ba5ee21da3a0fc54b18319680d567379d3e13a9e15e97587",
-  "notes": "黃果漫劇 TV v3.4.25｜黑金遙控視窗文字適配與逐列捲動\n\n1. 【選集面板】保持螢幕高度 1/4、底部寬版與黑金風格。重新分配影片標題、集數區間標籤、兩排集數按鈕和底部遙控提示的高度比例，避免文字超出按鈕而被截斷。\n2. 【文字易讀性】標題、集數區間、集數格、操作提示改用 Android 文字自動縮放範圍，關閉容易造成垂直裁切的額外字型內距；長影片名稱保留單行省略機制，並避免按鈕文字換行。\n3. 【播放設定】高度仍精確保持螢幕 1/4，不再把四列設定全部擠進固定高度。內部採可捲動的雙列視窗；按遙控器 DOWN／UP 每次切換一列，將選取列自動移進畫面。\n4. 【原生 D-pad】保留左／右調整播放速度、畫面模式、OK 確認、BACK 返回；不重建整個面板，只更新既有選項焦點與滾動位置。\n5. 【功能不變】繼續保留原本四列：播放速度、畫面模式、全螢幕、播放控制；不恢復已刪除的「選擇集數」與「定時」。選集仍由播放畫面 DOWN 開啟，每頁 20 集、10 格 × 2 列。\n6. 【相容性】保留先前 v3.4.24 的整體系統穩定化、海報快取、播放、收藏／歷史資料保護、正式 APK 簽章與 Google TV 系統更新渠道。\n7. 【版本】v3.4.25／versionCode 44；applicationId tw.tvsite.viewer.huangguostabletv 不變，沿用 https://ybh651012.github.io/huangguo-tv-updates/update.json。\n\n注意：Android 自動建置與靜態回歸測試不能取代 Google TV Streamer 4K 的實際不同字型比例與解析度驗收。"
+  "versionCode": 45,
+  "versionName": "3.4.26",
+  "apkUrl": "https://ybh651012.github.io/huangguo-tv-updates/releases/HuangguoTV_v3.4.26.apk",
+  "sha256": "ab9cd99f742c8121dbfc27aa8ffc10414a6b2914e551c6dd5318ee269ca08b24",
+  "notes": "黃果漫劇 TV v3.4.26｜播放時自動隱藏原網站頂部導覽\n\n1. 修正影片播放畫面上方仍顯示來源網站 Logo、頂部導覽列、搜尋及帳號圖示的問題。進入影片詳情頁時自動隱藏網站自己的頂部介面。\n2. 使用影片頁專屬的 CSS 與 DOM 標記，保護真正的 video 元素及其播放器父容器；不會把整個播放器、影片與字幕一起刪掉，也不影響首頁、分類、專題及搜尋等非播放頁。\n3. 網站重新掛載頂部導覽、播放集數切換及重進播放頁後，會重新辨識並隱藏網站頂部介面，避免再跳出黑色橫條。\n4. 黃果漫劇自己的原生黑金遙控器、四分之一螢幕選集與設定面板、全寬播放控制列、播放 3 秒後自動隱藏、歷史紀錄及收藏等既有功能不變。\n5. 保留先前 v3.4.25 的播放設定逐列捲動、選集文字比例與 v3.4.24 系統穩定性修正。\n6. 版本 v3.4.26／versionCode 45，applicationId tw.tvsite.viewer.huangguostabletv 與正式簽章不變，繼續使用原有 GitHub Pages OTA 更新站。\n\n注意：如果來源網站 Logo 是燒錄在影片影像裡的浮水印，不是可單獨操作的 HTML 頂部介面，為保護影片內容此修正不會裁切或改動影片畫素；實機需確認來源網站 UI 是否被隱藏。"
 }
