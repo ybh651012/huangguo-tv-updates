@@ -1,8 +1,8 @@
 {
   "packageName": "tw.tvsite.viewer.huangguostabletv",
-  "versionCode": 45,
-  "versionName": "3.4.26",
-  "apkUrl": "https://ybh651012.github.io/huangguo-tv-updates/releases/HuangguoTV_v3.4.26.apk",
-  "sha256": "ab9cd99f742c8121dbfc27aa8ffc10414a6b2914e551c6dd5318ee269ca08b24",
-  "notes": "黃果漫劇 TV v3.4.26｜播放時自動隱藏原網站頂部導覽\n\n1. 修正影片播放畫面上方仍顯示來源網站 Logo、頂部導覽列、搜尋及帳號圖示的問題。進入影片詳情頁時自動隱藏網站自己的頂部介面。\n2. 使用影片頁專屬的 CSS 與 DOM 標記，保護真正的 video 元素及其播放器父容器；不會把整個播放器、影片與字幕一起刪掉，也不影響首頁、分類、專題及搜尋等非播放頁。\n3. 網站重新掛載頂部導覽、播放集數切換及重進播放頁後，會重新辨識並隱藏網站頂部介面，避免再跳出黑色橫條。\n4. 黃果漫劇自己的原生黑金遙控器、四分之一螢幕選集與設定面板、全寬播放控制列、播放 3 秒後自動隱藏、歷史紀錄及收藏等既有功能不變。\n5. 保留先前 v3.4.25 的播放設定逐列捲動、選集文字比例與 v3.4.24 系統穩定性修正。\n6. 版本 v3.4.26／versionCode 45，applicationId tw.tvsite.viewer.huangguostabletv 與正式簽章不變，繼續使用原有 GitHub Pages OTA 更新站。\n\n注意：如果來源網站 Logo 是燒錄在影片影像裡的浮水印，不是可單獨操作的 HTML 頂部介面，為保護影片內容此修正不會裁切或改動影片畫素；實機需確認來源網站 UI 是否被隱藏。"
+  "versionCode": 46,
+  "versionName": "3.4.27",
+  "apkUrl": "https://ybh651012.github.io/huangguo-tv-updates/releases/HuangguoTV_v3.4.27.apk",
+  "sha256": "e197e56245d21d1b003e77aac250909bc381714e72031e923bd1a15c18405e38",
+  "notes": "黃果漫劇 TV v3.4.27｜繁體／簡體中文字幕軌設定\n\n1. 播放設定新增「字幕」第五列，在既有黑金 1/4 螢幕設定面板中以遙控器上下鍵移動、左右鍵切換。字幕選項：「繁體中文」（預設）、 「簡體中文」、「自動」與「關閉」。\n2. WebView 播放頁支援來源 HTML5 video 原本提供的 textTracks（subtitles/captions）；優先選擇相符的繁體／簡體中文文字字幕軌。切換影片、動態增加字幕軌或返回播放時重新套用目前設定，不觸碰影片串流本身。\n3. Android Media3/ExoPlayer 原生播放備援使用 Text Track 的語言優先順序選擇來源提供的 HLS／MP4 內建字幕；關閉時停用文字字幕軌。既有播放／暫停、快轉及切集不變。\n4. 字幕語言偏好保存在 App 私有偏好設定中，重啟或正式 OTA 覆蓋升級後持續套用，不要求使用者重複設定。\n5. 黑金遙控器保持單一 Android D-pad 按鍵入口；選集每頁 20 集、選集／播放設定面板均維持畫面 1/4 高度，播放控制列 3 秒自動隱藏等既有操作不變。\n6. 本版只支援影片來源已提供的文字字幕軌，不提供 AI 語音轉字幕、沒有字幕軌時不會憑空產生字幕，也不自動將燒錄在影片畫面裡的簡體文字替換成繁體。繁／簡切換是語言軌選擇，不是文字轉換；來源不提供字幕時仍可能無字。\n7. 維持既有 packageId tw.tvsite.viewer.huangguostabletv、正式簽章金鑰及 GitHub Pages OTA 更新方式，版本 v3.4.27／versionCode 46。\n\n上架後請在 Google TV Streamer 4K 實測：含繁體與簡體文字字幕軌的影片、沒有文字字幕軌的影片、切集數與重啟保留設定。可用字幕種類由原始片源決定。"
 }
